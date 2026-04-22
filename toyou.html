@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOVE</title>
+    <link href="https://fonts.googleapis.com/css2?family=Mali&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            height: 100%;
+        }
+
+        body {
+            font-family: 'Mali', cursive;
+            background: linear-gradient(to right, #FDC7D7, #FFFFFF, #FDC7D7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .letter-card {
+            background: #fff;
+            border-radius: 25px;
+            padding: 50px 40px 40px;
+            width: min(90%, 700px);
+            border: 2px solid #E86C8D;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+            display: flex;
+            flex-direction: column;
+        }
+
+        h2 {
+            color: #5C3A42;
+            font-size: 26px;
+            margin-bottom: 20px;
+        }
+
+        /* ================== ส่วนที่แก้หลัก ================== */
+        .letter-card p {
+            color: #5C3A42;
+            font-size: 18px;
+            line-height: 1.8;
+            white-space: pre-line;
+
+            max-height: 45vh;              /* จำกัดความสูง */
+            overflow-y: auto;              /* เลื่อนเมาส์/นิ้วได้ */
+            padding-right: 6px;
+            margin-bottom: 35px;
+
+            -webkit-overflow-scrolling: touch;
+        }
+
+        /* scrollbar สวย ๆ */
+        .letter-card p::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .letter-card p::-webkit-scrollbar-thumb {
+            background: #E86C8D;
+            border-radius: 10px;
+        }
+
+        .letter-card p::-webkit-scrollbar-track {
+            background: #F9D6E0;
+        }
+        /* ===================================================== */
+
+        .close-btn {
+            background: #E86C8D;
+            color: #fff;
+            font-size: 18px;
+            padding: 10px 36px;
+            border: none;
+            border-radius: 999px;
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            box-shadow: 0 6px 18px rgba(232, 108, 141, 0.3);
+            align-self: center;
+        }
+
+        .close-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(232, 108, 141, 0.4);
+        }
+
+        /* กันติ่งขอบจอ */
+        @supports (padding: max(0px)) {
+            body {
+                min-height: 100dvh;
+                padding-left: max(24px, env(safe-area-inset-left));
+                padding-right: max(24px, env(safe-area-inset-right));
+                padding-top: max(24px, env(safe-area-inset-top));
+                padding-bottom: max(24px, env(safe-area-inset-bottom));
+            }
+        }
+
+        /* ---------- โทรศัพท์เล็ก ---------- */
+        @media (max-width: 360px) {
+            .letter-card {
+                padding: 26px 18px 24px;
+            }
+
+            h2 {
+                font-size: 20px;
+            }
+
+            .letter-card p {
+                font-size: 15px;
+                max-height: 50vh;
+            }
+
+            .close-btn {
+                font-size: 15px;
+                padding: 8px 20px;
+            }
+        }
+
+        /* ---------- โทรศัพท์ทั่วไป ---------- */
+        @media (min-width: 361px) and (max-width: 480px) {
+            .letter-card p {
+                font-size: 16px;
+                max-height: 50vh;
+            }
+        }
+
+        /* ---------- แนวนอนความสูงน้อย ---------- */
+        @media (orientation: landscape) and (max-height: 420px) {
+            .letter-card p {
+                max-height: 35vh;
+                font-size: 14px;
+            }
+        }
+
+        /* ---------- ลด motion ---------- */
+        @media (prefers-reduced-motion: reduce) {
+            .close-btn {
+                transition: none !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- อิอิ -->
+    <div class="letter-card">
+        <h2>Happy 5 mensiversary</h2>
+        <p>วันนี้ก็ครบรอบ5เดือนเเล้วนะ แล้วก็เป็นเดือนเเรกที่เราไม่ได้เจอกันวันครบรอบ ข้าก้อยากจะบอกนะว่าข้ามีความสุขมากๆในระยะเวลา5เดือนที่ผ่านมาขอบคุณในทุกๆอย่างเติ้ลทำให้และตามใจข้าที่สุดอันนี้ข้าชอบมากๆเลยล่ะ มันน่ารักอะนะถึงจะทะเลาะกับเติ้ลบ้างแต่ก็รักเติ้ลเหมือนเดิมนะไม่เคยน้อยลงสักวันเลยยยเติ้ลทำไมโมรู้สึกไม่ต้องเพอเฟคตลอดเวลาสามารถทำตามใจตัวเองได้และเติ้ลก็ซัพพอร์ตชั้นตลอดถึงบางครั้งจะบุลลี่ชั้นก็ตามไม่เป้นไร ิิ ปกติชั้นก็ไม่ค่อยเขียนการ์ดอะไรแบบยี้ให้เท่าไหร่ชั้นไม่รู้จะเขียนไรเอาเป็นว่าขอบคุณที่อยู่ด้วยกันมาและก็เวลาที่โมบอกให้เติ้ลบางอย่างที่โมไม่ชอบเติ้ลพยายามถึงแม้จะยากก็ตามชั้นรู้ว่าเธอก็พยายามอยู่ชั้นก้จะรอวันที่เธอทำได้นะะ มันมากกว่ารักมันมากกว่าคำว่าผูกพัน อยู่ด้วยไปนานสัก100ปี646575575757575765655656 ข้ารักเองนะอันนี้พูดจริง😞🫶🏻❣️💘
+        </p>
+
+        <!-- ปุ่มกลับไปหน้าเมนู -->
+        <button class="close-btn" onclick="window.location.href='menu.html'">ปิด</button>
+    </div>
+</body>
+
+</html>
